@@ -10,13 +10,11 @@
     box-sizing: border-box;
 }
 
-/* Dark Cinematic Background */
 body{
     background: linear-gradient(to bottom,#0a0a0a,#1a1a1a);
     color: white;
 }
 
-/* Main Container */
 #main-div{
     display: flex;
     flex-direction: column;
@@ -27,7 +25,6 @@ body{
     padding: 20px;
 }
 
-/* Title */
 #main-h1{
     font-weight: 700;
     font-size: 40px;
@@ -37,7 +34,6 @@ body{
     text-shadow: 0px 0px 10px rgba(229,9,20,0.6);
 }
 
-/* Search Box */
 #search{
     width: 40vw;
     border-radius: 25px;
@@ -48,16 +44,15 @@ body{
     border: none;
     outline: none;
     background: #222;
-    color: white;
+    color: rgb(112, 100, 100);
     box-shadow: 0px 0px 10px rgba(0,0,0,0.6);
     transition: 0.3s;
 }
 
 #search:focus{
-    box-shadow: 0px 0px 15px rgba(229,9,20,0.7);
+    box-shadow: 0px 0px 15px rgba(72, 101, 170, 0.7);
 }
 
-/* Movie Grid */
 #movie-box{
     width: 90vw;
     background-color: transparent;
@@ -68,7 +63,6 @@ body{
     gap: 25px;
 }
 
-/* Movie Cards */
 .box{
     height: 40vh;
     width: 30vw;
@@ -76,7 +70,7 @@ body{
     position: relative;
     overflow: hidden;
     background: var(--card-bg);
-    box-shadow: 0px 10px 25px rgba(0,0,0,0.7);
+    box-shadow: 0px 10px 25px rgba(58, 46, 46, 0.7);
     transition: 0.3s ease;
 }
 
@@ -85,7 +79,6 @@ body{
     box-shadow: 0px 15px 40px rgba(0,0,0,0.9);
 }
 
-/* Poster */
 img{
     height: 40vh;
     border-radius: 15px;
@@ -95,7 +88,6 @@ img{
     object-fit: cover;
 }
 
-/* Overlay (Movie Info) */
 .overlay{
     position: absolute;
     opacity: 0;
@@ -104,11 +96,10 @@ img{
     bottom: 0;
     padding: 15px;
     width: 100%;
-    
-    /* Cinematic Glass Effect */
+
     background: linear-gradient(
         to top,
-        rgba(0,0,0,0.9),
+        rgba(57, 49, 49, 0.9),
         rgba(0,0,0,0.3),
         transparent
     );
@@ -116,7 +107,6 @@ img{
     color: white;
 }
 
-/* Hover Effects */
 .box:hover .overlay{
     opacity: 1;
     transform: translateY(0);
@@ -125,3 +115,5 @@ img{
 .box:hover img{
      transform: scale(1.12);
 }
+
+
