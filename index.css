@@ -1,71 +1,127 @@
 :root {
-  --main-bg-color: brown;
+  --main-bg-color: #0f0f0f;
+  --card-bg: #1a1a1a;
+  --accent: #e50914;
 }
+
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+/* Dark Cinematic Background */
+body{
+    background: linear-gradient(to bottom,#0a0a0a,#1a1a1a);
+    color: white;
+}
+
+/* Main Container */
 #main-div{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-style: italic;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', Calibri, sans-serif;
+    padding: 20px;
 }
+
+/* Title */
 #main-h1{
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 0px 0px 10px rgba(229,9,20,0.6);
 }
+
+/* Search Box */
 #search{
     width: 40vw;
-    border-radius: 10px;
-    height: 40px;
+    border-radius: 25px;
+    height: 45px;
     font-size: large;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding: 10px;
-    margin: 10px;
+    padding: 10px 20px;
+    margin: 20px;
+    border: none;
+    outline: none;
+    background: #222;
+    color: white;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.6);
+    transition: 0.3s;
 }
+
+#search:focus{
+    box-shadow: 0px 0px 15px rgba(229,9,20,0.7);
+}
+
+/* Movie Grid */
 #movie-box{
     width: 90vw;
-    height: auto;
-    background-color: white;
+    background-color: transparent;
     border-radius: 10px;
     padding: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
 }
+
+/* Movie Cards */
 .box{
     height: 40vh;
     width: 30vw;
-    border: 2px solid black;
-    border-radius: 10px;
+    border-radius: 15px;
     position: relative;
+    overflow: hidden;
+    background: var(--card-bg);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.7);
+    transition: 0.3s ease;
 }
+
+.box:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 40px rgba(0,0,0,0.9);
+}
+
+/* Poster */
 img{
     height: 40vh;
-    border-radius: 10px;
+    border-radius: 15px;
     width: 30vw;
     transform: scale(1);
-    transition: all 0.1s ease;
-    object-fit:cover;
+    transition: all 0.4s ease;
+    object-fit: cover;
 }
+
+/* Overlay (Movie Info) */
 .overlay{
     position: absolute;
     opacity: 0;
-    transform: translateY(100px);
-    /* transition: property duration timing-function; */
-    transition: all 0.8s ease;
-    bottom: 0px;
-    padding: 12px;
-    /* background-color: var(--main-bg-color); */
-    background: rgba(0, 0.6, 0.6, 0.6);
+    transform: translateY(80px);
+    transition: all 0.6s ease;
+    bottom: 0;
+    padding: 15px;
+    width: 100%;
+    
+    /* Cinematic Glass Effect */
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.9),
+        rgba(0,0,0,0.3),
+        transparent
+    );
+
     color: white;
 }
+
+/* Hover Effects */
 .box:hover .overlay{
     opacity: 1;
     transform: translateY(0);
 }
+
 .box:hover img{
-     transform: scale(1.08);
+     transform: scale(1.12);
 }
